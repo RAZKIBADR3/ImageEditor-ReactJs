@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useEffect, useState} from "react";
+import axios from "axios";
+import ImageEditor from "./Component/ImageEditor";
+import './Css/style.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+    const [items,setItems] = useState(null)
+
+    useEffect(()=>{
+        axios.get('https://dummyjson.com/products')
+        .then(res=>{
+            const T = res.data.products.slice(0,8)
+            T.forEach(e=>{
+                e['brightness'] = 10;
+                e['contrast'] = 10;
+                e['opacity'] = 10;
+                e['saturate'] = 10;
+            });
+            setItems(T)
+        })
+        .catch(err=>console.log('error :' , err.message))
+    },[])
+    const result = 
+        items===null
+        ?<div className="loading d-flex align-items-center justify-content-center">Loading...</div>
+        :<ImageEditor items={items}/>
+    
+    return(
+        result
+    )
 }
-
-export default App;
