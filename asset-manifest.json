@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ImageEditor-ReactJs/static/css/main.a71a0b7c.css",
+    "main.js": "/ImageEditor-ReactJs/static/js/main.27ca8f84.js",
+    "index.html": "/ImageEditor-ReactJs/index.html",
+    "main.a71a0b7c.css.map": "/ImageEditor-ReactJs/static/css/main.a71a0b7c.css.map",
+    "main.27ca8f84.js.map": "/ImageEditor-ReactJs/static/js/main.27ca8f84.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a71a0b7c.css",
+    "static/js/main.27ca8f84.js"
+  ]
+}
